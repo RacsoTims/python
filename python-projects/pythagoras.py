@@ -80,3 +80,4 @@ result = pythagoras(integers, upper_bound)
 
 for triple in result:
     print(f"{result.index(triple) + 1}.   {triple}")
+    print(sum(triple))

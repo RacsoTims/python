@@ -13,8 +13,9 @@ def generate_primes(start, end, step_size):
                 break
     return primes
 
+
 start = 3
-end = 100
+end = 1000
 step_size = 2
 
 result = generate_primes(start, end, step_size)
