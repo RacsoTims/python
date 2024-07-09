@@ -3,62 +3,47 @@
 # OPDRACHT
 # Find the sum of all the positive integers which cannot be written as the sum of two abundant numbers.
 
-import numpy as np
+import sys
+sys.path.append("/home/oscar/tools/")
+
+import utils
+
+
+def check_ifabundant(number, divisors):
+    
+    is_abundant = False
+    
+    if sum(divisors) > number:
+        is_abundant = True
+    
+    return is_abundant
+
+
 abundant = []
-deficient = []
-perfect = []
-
-not_sum_abundant = []
-
-
-def check_abundance(number, divisor_sum):
-    if divisor_sum > number:
-        return True
-    elif divisor_sum < number:
-        return False
+for n in range(2, 28123 + 1):   # 'By mathematical analysis, it can be shown that all integers greater than 23183 can be written as the sum of two abundant numbers.'
+    divisors = utils.find_divisors(n, proper = True)
+    is_abundant = check_ifabundant(n, divisors)
+    if is_abundant:
+        abundant.append(n)
     else:
-        return "perfect"
-
-
-def calculate_sum_proper_divisors(number):
-
-    su = 0
-    for x in range(1, int(np.sqrt(number)) + 1):
-        temp = number % x
-        if temp == 0:
-            complement = number // x
-            if x != 1:
-                su += x + complement if x*x != number else x
-            else:
-                su += x
-    return (check_abundance(number, su))
-
-
-end = 23124 # zie opdracht
-
-for x in range(2, end):
-    result = calculate_sum_proper_divisors(x)
-    if result and result != "perfect":
-        abundant.append(x)
-
-for y in range(16001, end):
-    if y < 23:
-        not_sum_abundant.append(y)
-    elif y in abundant:
         continue
+
+# print(len(abundant), abundant)
+
+not_sum = []    # list of numbers that cannot be written as the sum of two abundant numbers
+for m in range(1, 23183 + 1):
+    is_not_sum = False
+    check = [x for x in abundant if x <= m - 12] if m > 12 else []
+    if not check:
+        not_sum.append(m)
     else:
-        cut = (len(abundant) // 2) + 1
-        # print(y)
-        for number in abundant[:cut]:
-            # print(y)
-            if (y - number) in abundant:
+        for number in check:
+            remainder = m - number
+            if remainder in check:
                 break
-            elif (y - number) not in abundant and number == abundant[-1]:
-                not_sum_abundant.append(y)
-                print(not_sum_abundant)
-            # else:
-            #     continue
+            elif remainder not in check and number == check[-1]:
+                is_not_sum = True
+        if is_not_sum:
+            not_sum.append(m)
 
-
-# print(abundant, len(abundant))
-print(not_sum_abundant, end)
+print(sum(not_sum), not_sum)

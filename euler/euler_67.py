@@ -1,13 +1,14 @@
-# URL: https://projecteuler.net/problem=18
+# URL: https://projecteuler.net/problem=67
 
 rows = {}
 
 count = 0
-with open('/home/oscar/projects/python/euler_data/euler_18.txt', 'r') as data:
+with open('/home/oscar/projects/python/euler_data/euler_67.txt', 'r') as data:
     for row in data:
         rows[count] = list((row.replace("\n", "")).split(" "))
         count += 1
 
+# print(count)
 # print(rows)
 
 for x in range(len(rows.keys()) - 2, -1, -1):
