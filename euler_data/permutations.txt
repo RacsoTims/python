@@ -1,0 +1,1 @@
+# Permutations of n-digit pandigital numbers, up to and including n = 9
