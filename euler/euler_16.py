@@ -1,7 +1,6 @@
 # URL: https://projecteuler.net/problem=16
 
-# OPDRACHT
-# What is the sum of the digits of the number 2**1000?
+# PROBLEM: What is the sum of the digits of the number 2**1000?
 
 # Algoritme
 # Je gaat van achter naar voren door het getal. Elk cijfer (x) verdubbel je.

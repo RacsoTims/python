@@ -1,7 +1,6 @@
 # URL: https://projecteuler.net/problem=25
 
-# OPDRACHT
-# What is the index of the first term in the Fibonacci sequence to contain 1000 digits?
+# PROBLEM: What is the index of the first term in the Fibonacci sequence to contain 1000 digits?
 
 fibonacci = []
 
@@ -16,7 +15,7 @@ while len(fibonacci) < terms:
         next_term = sum(fibonacci[-1:-3:-1])
         fibonacci.append(next_term)
 
-        if len(str(next_term)) == 1000: # zie opdracht
+        if len(str(next_term)) == 1000: # see problem
             break
 
 # print(fibonacci)

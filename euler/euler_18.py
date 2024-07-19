@@ -1,14 +1,17 @@
 # URL: https://projecteuler.net/problem=18
 
+import sys
+sys.path.append("C:\\Users\\oscar\\my_stuff\\bash\\tools")
+import utils
+
 rows = {}
 
 count = 0
-with open('/home/oscar/projects/python/euler_data/euler_18.txt', 'r') as data:
+path = utils.determine_path()
+with open(f'{path}euler_18.txt', 'r') as data:
     for row in data:
         rows[count] = list((row.replace("\n", "")).split(" "))
         count += 1
-
-# print(rows)
 
 for x in range(len(rows.keys()) - 2, -1, -1):
     new_row = []

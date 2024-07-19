@@ -1,7 +1,6 @@
 # URL: https://projecteuler.net/problem=23
 
-# OPDRACHT
-# Find the sum of all the positive integers which cannot be written as the sum of two abundant numbers.
+# PROBLEM: Find the sum of all the positive integers which cannot be written as the sum of two abundant numbers.
 
 import sys
 sys.path.append("/home/oscar/tools/")

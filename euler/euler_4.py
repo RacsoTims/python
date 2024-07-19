@@ -2,33 +2,23 @@
 
 # Find the largest palindrome made from the product of two 3-digit numbers.
 
-# check if input number is a palindrome
-def palindrome(number):
+import sys
+sys.path.append("C:\\Users\\oscar\\my_stuff\\bash\\tools")
 
-    if str(number) == str(number)[::-1]:
-        return True
-    else:
-        return False
+import utils
 
-
-# test = 9009
-# if palindrome(test):
-#     print(f"{test} is een palindroom!")
-# else:
-#     print(f"{test} is geen palindroom!")
 palindromes = []
 iteration = 0
 
 for x in range(100, 1000):
     for y in range(100 + iteration, 1000):
-
+        
         candidate = x * y
-        if palindrome(candidate):
+        if utils.check_ifPalindrome(candidate):
             palindromes.append(candidate)
-        else:
-            continue
-
+        
     iteration += 1  #1239 vs. 2470 - what explains the difference?
 
 # print(len(palindromes), palindromes)
 print(max(palindromes)) # The biggest palindrome is 906609, the product of 913 and 993
+print(utils.find_divisors(max(palindromes)))

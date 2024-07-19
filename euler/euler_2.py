@@ -3,25 +3,11 @@
 # By considering the terms in the Fibonacci sequence whose values do not exceed four million,
 # find the sum of the even-valued terms.
 
-# Fibonacci sequence, first 10 terms
-sequence = [1, 2]
-length = len(sequence)
-limit = 100
+import sys
+sys.path.append("C:\\Users\\oscar\\my_stuff\\bash\\tools")
 
-max_term = 4000000
+import utils
 
-while length < limit:
-
-    new_term = sum(sequence[(length - 2):length])
-
-    if new_term <= max_term:
-        sequence.append(new_term)
-    else:
-        break    
-
-    length += 1
-
-# print(sequence)
-# print(len(sequence))
-answer = sum([i for i in sequence if i % 2 == 0])
-print(answer)
+fibonacci = utils.get_fibonacci(including = 4000000)
+even_sum = sum([n for n in fibonacci if n % 2 ==  0])
+print(even_sum)

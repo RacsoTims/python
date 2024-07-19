@@ -1,33 +1,18 @@
 # URL: https://projecteuler.net/problem=14
 
-# OPDRACHT
-# Which starting number, under one million, produces the [Collatz] longest chain?
+# PROBLEM: Which starting number, under one million, produces the longest [Collatz] chain?
 
-def collatz_chain(number):
-    chain = []
-    chain.append(number)
+import sys
+sys.path.append("C:\\Users\\oscar\\my_stuff\\bash\\tools")
+import utils
 
-    while number > 1:
+chains = [1]
+upper_bound = 1000000 # see problem
 
-        if number % 2 == 0:
-            next_term = number // 2
-        else:
-            next_term = number * 3 + 1
-
-        chain.append(next_term)
-        number = next_term
-
-    return chain
-
-chains = [[1]]
-upper_bound = 1000000 # zie opdracht
 for x in range(2, upper_bound):
-    result = collatz_chain(x)
-    if len(result) > len(chains[0]):
-        chains[0] = result
-        # print(chains[0])
-    else:
-        continue
+    sequence_length = utils.collatz_sequence(x)
+    if sequence_length > chains[0]:
+        chains[0] = sequence_length
+        longest = x
 
-longest = chains[0]
-print(longest, len(longest), longest[0])
+print(longest)

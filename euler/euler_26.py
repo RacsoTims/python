@@ -1,16 +1,16 @@
 # URL: https://projecteuler.net/problem=26
 
-# OPDRACHT
-# Find the value of d < 1000 for which 1/d contains
+# PROBLEM: Find the value of d < 1000 for which 1/d contains
 # the longest recurring cycle in its decimal fraction part.
 
 
 def calculate_cycle(n, d):
+    
     # 'n' = nominator, 'd' = denominator
     remaining = []
     digits = []
     remaining.append(n)
-
+    
     while n < d:
         n *= 10
         digit = n // d
@@ -22,6 +22,7 @@ def calculate_cycle(n, d):
             digits.append(digit)
             remaining.append(remainder)
         n -= digit * d
+    
     return digits
 
 

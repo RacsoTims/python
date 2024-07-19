@@ -1,6 +1,6 @@
 # URL: https://projecteuler.net/problem=30
 
-# hypothesis: only numbers bigger than 9999 (4 digits long) and smaller
+# Hypothesis: only numbers bigger than 9999 (4 digits long) and smaller
 # than 100.000 (6 digits long) could have the described property.
 
 exponent = 5

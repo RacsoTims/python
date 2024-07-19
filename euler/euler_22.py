@@ -1,18 +1,21 @@
 # URL: https://projecteuler.net/problem=22
 
-# OPDRACHT
-# Then working out the alphabetical value for each name, multiply this value by its alphabetical position in the list to obtain a name score.
+# PROBLEM: Then working out the alphabetical value for each name, multiply this value by its alphabetical position in the list to obtain a name score.
 # What is the total of all the name scores in the file?
 
-# lees het bestand in
+import sys
+sys.path.append("C:\\Users\\oscar\\my_stuff\\bash\\tools")
+import utils
+
+# read contents of file
 names = []
 string_names = ""
 names_temp = [] # convert string of names to list of names
-path = "/home/oscar/Downloads/euler_22.txt"
+path = utils.determine_path()
 
 
 def get_content(string_names):
-    with open(path) as temp:
+    with open(f"{path}euler_22.txt") as temp:
         for line in temp:
             string_names += line
     return convert_to_Singlelist(string_names)
@@ -32,7 +35,6 @@ def calculate_name_score(name, position):
 
 names = get_content(string_names)
 names.sort()   # sorted list of all the names
-# print(names, len(names))
 
 total = 0
 for i in range(0, len(names)):
