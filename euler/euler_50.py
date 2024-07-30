@@ -8,27 +8,25 @@ import utils
 upper_bound = 1000000
 primes = utils.get_primes(including = upper_bound)
 
-largest_sums = []
-length_sequences = []
+prime_sum = 0
+length = 0
+sequence = []
 
-for prime in primes:
-    sums = [0]
-    count = primes.index(prime)
-    length = 0
-    while sums[-1] < upper_bound:
-        if count < len(primes):
-            sums.append(sums[-1] + primes[count])
-            count += 1
-            length += 1
-        else:
-            break
-    largest_sums.append(max([m for m in sums if m in primes]))
-    length_sequences.append(length - 1)
+for i in range(0, len(primes) - 1):
+    
+    temp = 0    # here we will store the sum of a particular sequence
+    temp1 = 0   # here we will store the length of a sequence
+    temp2 = []  # here we will store the consecutive primes that make up a sequence
+    iteration = i
+    
+    while temp < upper_bound:
+        temp += primes[iteration]
+        temp2.append(primes[iteration])
+        iteration += 1
+        temp1 += 1
+        if temp1 > length and temp in primes:
+            prime_sum = temp
+            length = temp1
+            sequence = temp2
 
-for i in range(0, len(length_sequences)):
-    if largest_sums[i+1] >= largest_sums[i]:
-        largest_sum = largest_sums[i+1]
-    else:
-        break
-
-print(largest_sum)
+print(sequence, prime_sum, length + 1)

@@ -1,7 +1,7 @@
 # URL: https://projecteuler.net/problem=43
 
 import sys
-sys.path.append("C:\\Users\\oscar\\my_stuff\\bash\\tools")
+sys.path.append("/home/oscar/tools/")
 import utils
 
 divisors = [2, 3, 5, 7, 11, 13, 17] # see problem
@@ -18,3 +18,10 @@ for i in range(1, len(number) - 2):
 
 if divisibility:
     print(number)
+
+for m in range(100, 1000, 2):
+    # print(m)
+    if m % 2 == 0 and utils.check_ifRepeats(str(m)):
+        digits = [n for n in range(0, 10)]
+        
+        print(m)
