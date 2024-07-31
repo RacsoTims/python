@@ -4,16 +4,27 @@ import sys
 sys.path.append("/home/oscar/tools/")
 import utils
 
-hand = ["4C", "TH", "KC", "AC", "4D"]
-hand1 = ["8C", "7H", "6C", "5C", "4C"]
-hand2 = ["AC", "4H", "3C", "2C", "5C"]
-hand3 = ["AC", "TH", "TC", "TD", "TS"]
-# print(hand.count("C"))
-# print(utils.sort_bySuit(hand))
-# print(utils.check_ifFlush(hand))
-# print(utils.sort_byValue(hand))
-# print(utils.straight(hand2))
-# print(utils.highest_straight(hand))
-# print(utils.three_of_a_kind(hand3))
-print(utils.sort_byValue(hand))
-print(utils.sort_bySuit(hand))
+wins_total = 0
+path = utils.determine_path()
+
+
+def get_data():
+    
+    hands = []
+    
+    with open(f"{path}euler_54.txt", "r") as data:
+        for line in data:
+            hands.append(line.split(" ")[0:5])
+            hands.append(((line.replace("\n", "")).split(" "))[5:10])
+    
+    return hands
+
+
+hands = get_data()
+for i in range(0, len(hands), 2):
+    hand1 = hands[i]
+    hand2 = hands[i+1]
+    if utils.play_round(hand1, hand2):
+        wins_total += 1
+
+print(wins_total)
