@@ -7,7 +7,7 @@ import utils
 
 factors = 4
 found = 0
-number= 210
+number = 134000
 
 while found < factors:
     temp = 0
@@ -22,16 +22,7 @@ while found < factors:
         break
     else:
         number += 1
-    # for m in range(n, n+sequence):
-    #     current = utils.prime_factorization(m).split(" * ")
-    #     if len(current) == sequence and m != n+sequence-1:
-    #         continue
-    #     elif len(current) == sequence and m == n+sequence-1:
-    #         for j in range(n, n+sequence):
-    #             print(j)
-    #         exit()
-    #     else:
-    #         break
 
 for m in range(number, number+factors):
     print(m)
+    print(utils.prime_factorizationPrettyPrint(m))
