@@ -5,16 +5,33 @@ sys.path.append("/home/oscar/tools/")
 
 import utils
 
-sequence = 4
+factors = 4
+found = 0
+number= 210
 
-for n in range(3, 100000):
-    for m in range(n, n+sequence):
-        current = utils.prime_factorization(m).split(" * ")
-        if len(current) == sequence and m != n+sequence-1:
-            continue
-        elif len(current) == sequence and m == n+sequence-1:
-            for j in range(n, n+sequence):
-                print(j)
-            exit()
-        else:
-            break
+while found < factors:
+    temp = 0
+    if len(utils.prime_factorization(number)) == factors:
+        temp += 1
+        for n in range(number+1, number+factors):
+            if len(utils.prime_factorization(n)) == factors:
+                temp += 1
+            else:
+                break
+    if temp == factors:
+        break
+    else:
+        number += 1
+    # for m in range(n, n+sequence):
+    #     current = utils.prime_factorization(m).split(" * ")
+    #     if len(current) == sequence and m != n+sequence-1:
+    #         continue
+    #     elif len(current) == sequence and m == n+sequence-1:
+    #         for j in range(n, n+sequence):
+    #             print(j)
+    #         exit()
+    #     else:
+    #         break
+
+for m in range(number, number+factors):
+    print(m)
