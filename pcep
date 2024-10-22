@@ -1,0 +1,49 @@
+Begrippen
+
+-	Instruction list (IL): a list of elementary (atomic) expressions which can be executed by a certain CPU. For example, x86 (used in personal computers) and arm (used in mobile devices) processors have different and incompatible instruction lists.
+
+-	Source code: a text encoded in any of the programming languages (regardless of the language's level).
+
+-	Trigraphs: ''' or """ (for multi-line strings).
+
+-	Unary operator: an operator with only one operand (+, -).
+
+-	Binary operator: an operator with two operands.
+
+-	Left-sided binding/right-side binding: when operators are evaluated from left to right, or the other way around.
+
+-	Python's keywords (or reserved words).
+
+-	Type casting: an operation during which the data changes its type.
+
+-	Control variable: 
+
+-	Initializing parameters: default values, postional, or by keyword
+
+-	Scope: a part of the code where a certain name is properly recognizable.
+
+-	Unit testing: programming technique in which tests and test data are created before the code is  written or created in parallel with the code.
+
+
+
+Every language has an alphabet, a lexis (dictionary), a syntax and a semantics
+
+Source code can be translated to machine code via two techniques:
+a) compilation - one-time translation, a binary file is created, the code is not automatically run, done by a compiler or translator;
+
+b) interpretation - on-the-fly translation, the code is also run, done by a interpreter.
+
+
+
+Error types
+
+NameError	calling a undefined function, 
+ValueError
+TypeError	calling a function with parameters missing
+IndexError
+KeyError
+UnboundLocalError
+ZeroDivisionError
+AttributeError
+SyntaxError
+

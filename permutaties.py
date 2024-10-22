@@ -1,4 +1,5 @@
 import numpy as np
+import random as rand
 
 lijst1 = [1, 8, 8, 8, 4, 6, 6, 6, 6]
 
@@ -31,4 +32,14 @@ gevonden = vind_serie(serie_length, lijst1)
 print(gevonden)
 
 # 2
-
+print(rand.randint(0, 36))
+lst = [rand.randint(0, 36) for i in range(100)]
+lst.sort()
+frequencies = {}
+for number in lst:
+    if number not in frequencies.keys():
+        frequencies[number] = lst.count(number)
+    else:
+        continue
+print(frequencies)
+print(frequencies.values())
