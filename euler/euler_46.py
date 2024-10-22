@@ -4,7 +4,7 @@
 # n = p + 2 * s is the general form
 
 import sys
-sys.path.append("/home/oscar/tools/")
+sys.path.append("/home/oscar/python/")
 
 import utils
 

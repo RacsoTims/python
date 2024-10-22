@@ -1,7 +1,7 @@
 # URL: https://projecteuler.net/problem=32
 
 import sys
-sys.path.append("/home/oscar/tools/")
+sys.path.append("/home/oscar/python/")
 
 import utils
 

@@ -3,7 +3,7 @@
 # PROBLEM: Find the sum of all the positive integers which cannot be written as the sum of two abundant numbers.
 
 import sys
-sys.path.append("/home/oscar/tools/")
+sys.path.append("/home/oscar/python/")
 
 import utils
 
